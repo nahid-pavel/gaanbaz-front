@@ -1,0 +1,41 @@
+initAngularApp = (hash, dependencies) ->
+  angular.element(document).ready ->
+    deferredBootstrapper.bootstrap
+      element: document.body
+      module: "<%= app_name %>"
+      injectorModules: dependencies
+      resolve: hash
+
+    require "../app/hooks"
+    return
+
+  return
+
+require "angular"
+require "{{router}}"
+require "angular-deferred-bootstrap"
+bulk = require("bulk-require")
+initializers = bulk(__dirname, ["../app/initializers/*.js"])
+boot = (dependencies) ->
+  app = undefined
+  deps = undefined
+  deps = ["{{modules}}"]
+  deps = deps.concat(dependencies)  if typeof dependencies is "object"
+  app = angular.module("<%= app_name %>", deps)
+  mapHash = {}
+  injectorDependencies = ["<%= app_name %>"]
+  if Object.keys(initializers).length > 0 and typeof (initializers[".."]) isnt "undefined" and typeof (initializers[".."]["app"]) isnt "undefined"
+    resolvesList = initializers[".."]["app"].initializers
+    objectKeys = Object.keys(resolvesList)
+    x = 0
+
+    while x < objectKeys.length
+      identifier = objectKeys[x]
+      name = resolvesList[identifier].provider
+      mapHash[name] = resolvesList[identifier].resolve
+      injectorDependencies = injectorDependencies.concat(resolvesList[identifier].dependencies)  if typeof (resolvesList[identifier].dependencies) isnt "undefined"
+      x++
+  initAngularApp mapHash, injectorDependencies
+  return
+
+module.exports = boot

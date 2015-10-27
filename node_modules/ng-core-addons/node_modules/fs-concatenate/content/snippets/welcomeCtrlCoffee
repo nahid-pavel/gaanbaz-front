@@ -1,0 +1,4 @@
+### @ngInject###
+
+module.exports = ($scope) ->
+ $scope.greeting = 'Hello world! This is ngCLI Boilerplate.'

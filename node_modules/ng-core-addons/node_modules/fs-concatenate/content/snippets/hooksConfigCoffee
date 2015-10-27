@@ -1,0 +1,13 @@
+routeMap = require '../routes.js'
+
+### @ngInject###
+module.exports = ($routeProvider, $locationProvider) ->
+  angular.forEach routeMap, (route) ->
+    unless typeof (route.otherwise) is "undefined"
+      $routeProvider.otherwise redirectTo: route.otherwise
+    else
+      url = route.url
+      delete route.url
+      $routeProvider.when url, route
+    return
+  return

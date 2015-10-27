@@ -1,0 +1,25 @@
+[
+  {
+    "type": "input",
+    "name": "app_name",
+    "default": "angularApp",
+    "message": "Enter your angular app name"
+  },
+  {
+    "type": "list",
+    "name": "coding_style",
+    "message": "Select your language preference",
+    "choices": [
+      "CoffeeScript",
+      "Javascript"
+    ],
+    "default": "Javascript"
+  },
+  {
+    "type": "list",
+    "name": "dependencies",
+    "message": "Select list of dependencies you want to install",
+    "choices": "{{optionals}}",
+    "default": "angular-route"
+  }
+]

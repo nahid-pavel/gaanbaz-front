@@ -1,0 +1,54 @@
+{
+  "directories":[
+    "app/controllers",
+    "app/templates",
+    "app/hooks",
+    "app/validations",
+    "app/initializers",
+    "app/store",
+    "app/factories",
+    "app/directives",
+    "app/filters",
+    "app/assets",
+    "app/styles",
+    "dist",
+    "core",
+    "tests"
+  ],
+  "files":{
+    "app/constants.{{ext}}": "content/snippets/{{constants}}",
+    "app/routes.{{ext}}": "content/snippets/{{router}}",
+    "app/styles/app.css": "content/snippets/{{indexCss}}",
+    "app/app.{{ext}}": "content/snippets/{{appJs}}",
+    "ngconfig.json": "content/snippets/{{config}}",
+    "core/boot.{{ext}}": "content/snippets/{{boot}}",
+    ".editorconfig": "content/snippets/{{editorconfig}}",
+    ".gitignore": "content/snippets/{{gitignore}}",
+    "app/hooks/index.{{ext}}": "content/snippets/{{hooksIndex}}",
+    "app/controllers/welcomeCtrl.{{ext}}": "content/snippets/{{welcomeCtrl}}",
+    "app/hooks/config.{{ext}}": "content/snippets/{{hooksConfig}}",
+    "app/hooks/run.{{ext}}": "content/snippets/{{hooksRun}}",
+    "index.html": "content/snippets/{{indexFile}}",
+    "app/templates/welcome.html": "content/snippets/{{welcomeFile}}"
+  },
+  "snippets":{
+      "constants": "constantsCoffee",
+      "router" : "routerCoffee",
+      "appJs": "appCoffee",
+      "welcomeCtrl": "welcomeCtrlCoffee",
+      "config": "config",
+      "boot": "bootCoffee",
+      "editorconfig": "editorconfig",
+      "gitignore": "gitignore",
+      "hooksIndex": "hooksIndexCoffee",
+      "hooksConfig": "",
+      "hooksRun": "hooksRunCoffee",
+      "indexFile": "indexFile",
+      "indexCss": "indexCss",
+      "welcomeFile" : "welcomeFile"
+  },
+  "resolves":{
+    "angular-route": ["ngRoute"],
+    "angular-ui-router": ["ui.router"]
+  }
+}

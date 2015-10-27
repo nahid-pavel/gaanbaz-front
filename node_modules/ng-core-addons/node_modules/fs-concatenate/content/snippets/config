@@ -1,0 +1,12 @@
+{
+  "preffered_coding_style": "{{preferred_coding_style}}",
+  "css_preprocessor": "css",
+  "app_name": "angularApp",
+  "uglify_js": true,
+  "prefix_css": true,
+  "minify_css": true,
+  "port": 3080,
+  "liveReload": true,
+  "runServer": true,
+  "host": "127.0.0.1"
+}

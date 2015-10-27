@@ -1,0 +1,27 @@
+{
+  "npm":{
+    "dependencies": {
+      "bulk-require": "^0.2.1",
+      "bulkify": "^1.0.2",
+      "deamdify": "^0.1.1",
+      "debowerify": "^1.2.0"
+    },
+    "devDependencies": {
+      "jasmine-core": "^2.1.3",
+      "karma-browserify": "^1.0.0",
+      "karma-chrome-launcher": "^0.1.7",
+      "karma-jasmine": "^0.3.2"
+    }
+  },
+  "bower":{
+    "dependencies": {
+      "angular-deferred-bootstrap": "~0.1.5",
+      "angular-mocks": "~1.3.5",
+      "angular": "~1.3.5"
+    },
+    "optional":{
+      "angular-route": "~1.3.6",
+      "angular-ui-router": "~0.2.13"
+    }
+  }
+}
